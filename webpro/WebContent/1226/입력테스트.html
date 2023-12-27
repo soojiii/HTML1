@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href"../CSS/public.css">
+<style>
+pre{
+background-color: lightgreen;
+}
+body{
+min-width :1000px;
+}
+form{
+border : 2px double blue;
+width : 40%;
+height : 400px;
+margin : 50px;
+padding : 20px;
+}
+h2{
+display : inline-block;
+margin-left : 350px;
+padding-top : 30px;
+}
+.c1{
+display : inline-block;
+width : 80px;
+height : 30px;
+margin-left : 50px;
+}
+#d1{
+vertical-align: top;
+}
+/* option{
+width : 150px;
+} */
+.sub{
+margin-left : 50px;
+}
+/* input[class=sud]{
+} */
+input[name=addr]{
+background-color: pink;
+}
+#addr + input{
+border : 2px solid red;
+}
+#addr ~ input{
+border : 3px dotted green;
+}
+/* textarea{
+	height :200px;
+} */
+
+/* input#addr
+input[id=addr] */
+</style>
+</head>
+<body>
+<pre style="background-color: yellow;">
+입력 후 전송하면~~.jsp로 전송한다
+전송하기 위해서는 input 필드에 반드시 name속성이 있어야 한다
+title 		: 마우스를 요소위에 올려놓으면 메모박스가 나타남
+required	: 필수항목, 반드시 입력
+autofocus	: 실행시 커서의 위치를 설정
+pattern		: 정규식
+placeholder	: input 필드에 나타나는 예시, 제목, 내용
+readonly	: 값을 변경할수 없는 필드, 반드시 value속성이 설정
+
+</pre>
+<h2>회원가입 화면</h2>
+<form action="테스트.jsp" method="post">
+
+<label class="c1">이름</label>
+<input name="name"><br>
+
+<label class="c1" id="addr">주소</label>
+<input name="addr"><br>
+
+<label class="c1">이메일</label>
+<input name="email"><br>
+
+<label class="c1">성별</label>
+<input type="radio" name="gender" value="Male" >Male
+<input type="radio" name="gender" value="Female">Female
+<br>
+
+
+<label id="d1" class="c1">내용</label>
+<textarea name="area" rows="15" cols="30"></textarea>
+<br>
+
+<input type="submit" class="sub">제출
+<input type="reset">초기화
+
+</form>
+
+
+</body>
+</html>
