@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#mainDiv {
+	display: flex;
+	flex-direction: column;
+	min-width: 1250px;
+	align : center;
+}
+
+#secondDiv {
+	display: flex;
+	flex-direction: row;
+	width : 700px; 
+}
+
+header {
+	border: 2px solid;
+}
+
+nav {
+	border: 30px solid;
+}
+nav ul{
+	border : 3px inset red;
+    list-style-type: none;
+    height : 50px;
+    padding-top : 20px;
+    width : 800px;
+    border-left : none;
+    border-right : none;
+}
+nav li{
+	width : 100px;
+    margin-left : 10px;
+    float : left;
+    text-align : center;
+}
+
+section {
+	border: 2px solid;
+	flex : 400px;
+	
+}
+
+#left {
+	border: 2px solid;
+	flex : 200px;
+}
+
+#right {
+	border: 2px solid;
+	flex : 200px;
+}
+
+footer {
+	border: 2px solid;
+}
+
+#headerimg {
+	whidth: 50px;
+	height: 50px;
+}
+
+#current_date {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="mainDiv">
+		<header>
+			<h1>
+				<img id="headerimg" src="../images/쇼핑타운.jpeg" alt="쇼핑타운.jpeg">
+				<a href=“index.html”>Web Shop</a>
+			</h1>
+		</header>
+
+
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">My Account</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+		</nav>
+		
+		
+		<div id="secondDiv">
+			<aside id="left">
+				<ul>
+					<li>컴퓨터</li>
+					<li>의류</li>
+					<li>음악</li>
+					<li>영화</li>
+					<li>스포츠/레져</li>
+					<li>가구/인테리어</li>
+					<li>식품</li>
+				</ul>
+			</aside>
+
+
+			<section id="main">
+				<article id="article1">
+					
+				</article>
+			</section>
+
+			<aside id="right">
+				<div id="shopcart">…</div>
+
+				<div id="login">
+					<h4>Log In</h4>
+					<form action="#">…</form>
+				</div>
+			</aside>
+
+		</div>
+
+		<footer>
+			<div id="current_date">
+				<script>
+					date = new Date();
+					year = date.getFullYear();
+					month = date.getMonth() + 1;
+					day = date.getDate();
+					document.getElementById("current_date").innerHTML = month
+							+ "/" + day + "/" + year;
+				</script>
+				&nbsp; &nbsp;&nbsp;대덕
+			</div>
+		</footer>
+
+
+	</div>
+</body>
+</html>
