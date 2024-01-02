@@ -9,33 +9,40 @@ proc3 = () => {
 	score =  prompt("점수입력(1~100)");
 	
 	//100이상이거나 1미만 이면 오류 처리
-	
+	if(score<1 || score>100){
+		alert("범위 의 수가 아닙니다");
+		return false;
+	}
 	//점수 비교 - switch - 학점 생성
 /* 	if(score >=90 && score <=100){
 	}else if(score>=80){		
 	}else if(score>=70){		
 	}else if(score>=60) */
 	
-	switch(score){
-	case 90 ... 100 :
-		s = A;
+	switch(parseInt(score/10)){
+	case 10 :
+	case 9 : 
+		res = "A";
 		break;
-	case 80 ... 89 :
-		s = B;
+	case 8 :
+		res = "B";
 		break;
-	case 70 ... 79 :
-		s = C;
+	case 7 :
+		res = "C";
 		break;
-	case 60 ... 69 :
-		s = D;
+	case 6 :
+		res = "D";
 		break;
-	case 0 ... 59 :
-		s = F;
+	case 5 :
+		res = "F";
 		break;
+	default :
+		res = "F";
 	}
 	
 	//출력내용 작성
-	str = s;
+	str = "입력 받은 수 : "+ score + "<br>";
+	str += "성적 : " + res + "<br>";
 	
 	//출력장소 접근 - 출력
 	document.querySelector('#result3').innerHTML = str;

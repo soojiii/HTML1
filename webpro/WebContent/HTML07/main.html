@@ -4,139 +4,202 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-#mainDiv {
-	display: flex;
-	flex-direction: column;
-	min-width: 1250px;
-	align : center;
+body *{
+  border : 1px solid red;
 }
-
-#secondDiv {
-	display: flex;
-	flex-direction: row;
-	width : 700px; 
+#firstDiv{
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  margin : 30px auto;
 }
-
-header {
-	border: 2px solid;
+#secondDiv{
+  display: flex;
+  flex-direction: row;
 }
+#left{
+  flex : 20%;
+  background: skyblue;
+  margin : 10px;
+}
+#left h3{
+  margin : 20px 20px;
+  padding : 10px 0px;
+}
+#left ul{
+  list-style-type: none;
+  margin : 20px 20px;
+  padding : 0px;
+  background: blue;
+}
+#left li{
+  padding : 10px;
+}
+section{
+  flex : 60%;
+}
+iframe{
+  width : 624px;
+  height : 500px;
+  padding : 15px;
+}
+#right{
+  flex : 20%;
+  background: lightpink;
+  margin : 10px;
+}
+#right h3{
+  padding : 10px 0px;
+  margin-top : 0px;
+}
+#right p, #right a{
+  margin : 0;
+  padding : 0px;
+  font-size : 0.8rem;
+}
+#shoppingDiv{
+  margin : 20px 20px;
+  padding : 0px;
+}
+#loginDiv{
+  margin : 30px 20px;
+  padding : 0px;
+}
+.rLabel{
+  font-size : 0.8rem;
+}
+.rInput{
+  width  : 222px;
+  height : 20px;
+  font-size : 0.8rem;
+}
+.sub{
+  width  : 50px;
+  font-size : 0.8rem;
+  text-align: center;
+} 
+header{
+  background: green;
+  margin : 10px;
+}
+header a{
+  text-decoration: none;
+}
+header h1{
+  margin : 10px 20px;
+}
+#headerImg{
+  whidth: 50px;
+  height: 50px;
+  vertical-align: bottom;
+}
+nav{
+  background: gray;
+  display: flex;
+  align-items :center;
+  margin : 10px;
 
-nav {
-	border: 30px solid;
 }
 nav ul{
-	border : 3px inset red;
-    list-style-type: none;
-    height : 50px;
-    padding-top : 20px;
-    width : 800px;
-    border-left : none;
-    border-right : none;
+  list-style-type: none;
+  padding : 0px;
+  margin : 10px auto;
 }
 nav li{
-	width : 100px;
-    margin-left : 10px;
-    float : left;
-    text-align : center;
+  float : left;
+  margin : 0px 30px;
 }
-
-section {
-	border: 2px solid;
-	flex : 400px;
-	
+nav a{
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size : 1.3rem;
 }
-
-#left {
-	border: 2px solid;
-	flex : 200px;
+footer{
+  background: yellow;
+  margin : 10px;
 }
-
-#right {
-	border: 2px solid;
-	flex : 200px;
-}
-
-footer {
-	border: 2px solid;
-}
-
-#headerimg {
-	whidth: 50px;
-	height: 50px;
-}
-
-#current_date {
-	text-align: center;
+footer p{
+  text-align: center;
+  font-size : 1rem;
 }
 </style>
 </head>
 <body>
-	<div id="mainDiv">
-		<header>
-			<h1>
-				<img id="headerimg" src="../images/쇼핑타운.jpeg" alt="쇼핑타운.jpeg">
-				<a href=“index.html”>Web Shop</a>
-			</h1>
-		</header>
-
-
-		<nav>
+<div id="firstDiv">
+	<header>
+		<h1>
+			<img id="headerImg" src="../images/쇼핑타운.jpeg" alt="쇼핑타운.jpeg">
+			<a href=#>Web Shopping</a>
+		</h1>
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">My Account</a></li>
+			<li><a href="#">Contacts</a></li>
+		</ul>
+	</nav>
+	
+	<div id="secondDiv">
+		<aside id="left">
+			<h3>카테고리</h3>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">My Account</a></li>
-				<li><a href="#">Contacts</a></li>
+				<li><a href="computer.html" target=ifr>컴퓨터</a></li>
+				<li><a href="clothing.html" target="ifr">의류</a></li>
+				<li><a href="음악.html" target="ifr">음악</a></li>
+				<li><a href="영화.html" target="ifr">영화</a></li>
+				<li><a href="스프츠레저.html" target="ifr">스포츠/레져</a></li>
+				<li><a href="가구인테리어.html" target="ifr">가구/인테리어</a></li>
+				<li><a href="식품.html" target="ifr">식품</a></li>
 			</ul>
-		</nav>
+		</aside>
 		
+		<section>
+			<article id="article1">
+				<iframe src="computer.html" name="ifr">
+				</iframe>
+			</article>
+		</section>
 		
-		<div id="secondDiv">
-			<aside id="left">
-				<ul>
-					<li>컴퓨터</li>
-					<li>의류</li>
-					<li>음악</li>
-					<li>영화</li>
-					<li>스포츠/레져</li>
-					<li>가구/인테리어</li>
-					<li>식품</li>
-				</ul>
-			</aside>
-
-
-			<section id="main">
-				<article id="article1">
-					
-				</article>
-			</section>
-
-			<aside id="right">
-				<div id="shopcart">…</div>
-
-				<div id="login">
-					<h4>Log In</h4>
-					<form action="#">…</form>
-				</div>
-			</aside>
-
-		</div>
-
-		<footer>
-			<div id="current_date">
-				<script>
-					date = new Date();
-					year = date.getFullYear();
-					month = date.getMonth() + 1;
-					day = date.getDate();
-					document.getElementById("current_date").innerHTML = month
-							+ "/" + day + "/" + year;
-				</script>
-				&nbsp; &nbsp;&nbsp;대덕
+		<aside id="right">
+			<div id="shoppingDiv">
+				<h3>Shopping Cart</h3>
+				<p>현재 쇼핑카트에 물품이 없습니다.</p>
+				<a href="#">쇼핑카트 보기</a>
 			</div>
-		</footer>
-
-
+				<div id="loginDiv">
+				<form>
+				<h3>Log In</h3>
+				<label class="rLabel">아이디</label><br>
+				<input class="rInput" type="text" name="id">
+				<br>
+				<label class="rLabel">패스워드</label>	<br>
+				<input class="rInput" type="text" name="pw">
+				<br><br>
+				<input class="sub" type="submit" value="로그인">
+				<input class="sub" type="reset" value="초기화">
+				</form>		
+				<br><br>
+				<a href="#">회원가입</a>
+				<a href="#">비밀번호 분실</a>
+				</div>
+		</aside>
+		
 	</div>
+	<footer>
+		<p>2024.01.03&nbsp;&nbsp;&nbsp;대덕인재개발원</p>
+	</footer>	
+		
+	
+	
+</div>
+
+
+
+
 </body>
 </html>
