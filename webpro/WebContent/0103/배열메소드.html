@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+/* arr = [];
+arr = new Array();
+arr[0] = "사과";
+arr[1] = "복숭아"; */
+
+arr = ["사과", "복숭아", "파인애플", "바나나", "사과", "참외", "자두", "사과"];
+
+proc1 = () => {
+
+	vidx = arr.indexOf("사과");
+	alert(vidx);
+	
+}
+proc2 = () =>{
+	
+	vidx = arr.lastIndexOf("사과");
+	alert(vidx);
+	
+}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+<h4></h4>
+<input type="button" value="indexof" onclick="proc1()">
+<input type="button" value="lastindexof" onclick="proc2()">
+<br><br>
+<div id="result1"></div>
+<div id="result2"></div>
+</div>
+</body>
+</html>

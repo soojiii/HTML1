@@ -3,8 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#fdiv {
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+	margin: 50px auto;
+}
+
+#sdiv{
+	border : 1px solid; 
+    width: 600px;
+    height: 450px;
+	z-index: 2;
+    position: absolute;
+    top : 168px;
+}
+#aDiv{
+  width: 600px;
+  margin: 60px auto;
+}
+
+h3 {
+    background : white;
+	width: 115px;
+	margin-left: 40px;
+	z-index: 3;
+}
+h1{
+	margin-left: 160px;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	height: 20px;
+	margin: 5px;
+}
+
+.input {
+	display: inline-block;
+	width: 250px;
+	height: 20px;
+	margin: 5px;
+}
+
+#sub {
+	width: 250px;
+}
+
+form {
+	margin: 20px;
+	padding: 5px;
+	z-index: 10;
+}
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size : 1.3rem;
+  font-weight : bold;
+  color : #1e2c50;
+  background: #efe819;
+}
+</style>
 </head>
 <body>
+	<div id="fdiv">
+	<div><h1>회원가입 페이지</h1></div>
+	<div id="sdiv"></div>
+		<h3>회원정보입력</h3>
+		<form action="#" method="post">
 
+			<label>아이디</label> 
+			<input class="input" type="text" name="id">
+			<input type="submit" value="중복검사"> 
+			<br> 
+			<label>패스워드</label>
+			<input class="input" type="text" name="pw"> 
+			<br> 
+			<label>패스워드 확인</label> 
+			<input class="input" type="text" name="pwChk"> 
+			<br>
+			<label>이름</label> 
+			<input class="input" type="text" name="name" placeholder="홍길동">
+			<br>
+			<label>휴대폰 번호</label> 
+			<input class="input" type="text" name="tle" placeholder="010-1234-5678">
+			<br> 
+			<label>이메일</label> 
+			<input class="input" type="text" name="email" placeholder="abc123@google.com"> 
+			<br> 
+			<label>생일</label>
+			<input class="input" type="date" name="br"> 
+			<br> 
+			<label>홈페이지</label>
+			<input class="input" type="text" name="homeP" placeholder="www.google.com"> 
+			<br> 
+			<label>성별</label> 
+			<input type="radio" name="gen">남자&nbsp;&nbsp;&nbsp; 
+			<input type="radio" name="gen">여자
+			<br> <br> 
+			<input id="sub" type="submit" value="제출"> 
+			<input id="sub"	type="reset" value="초기화">
+		</form>
+	</div>
+	<div id="aDiv">
+	<a href="main.html">&nbsp;HOME&nbsp;</a>
+	</div>
 </body>
 </html>

@@ -3,8 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#firstDiv{
+  display: flex;
+  flex-direction: column;
+  width : 600px;
+}
+#secondDiv{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+img{
+  width : 170px;
+  height : 200px;
+  border : 1px solid;
+  margin : 5px;
+  margin-left: 0px;
+}
+iframe{
+  width : 590px;
+  height : 250px;
+}
+</style>
 </head>
 <body>
+<div id="firstDiv">
+	<div id="fdiv">
+	<iframe src="https://www.youtube.com/embed/xM1CIQd_X4c?si=LB80GHEJh9PkGxgr" name="mvifr"></iframe>
+	</div>
+	
+	<div id="secondDiv">
 
+		<div>
+		<a href="https://www.youtube.com/embed/cU_lhnaFNiA?si=Z-04GPa7MgyDVL_a" target="mvifr">
+		<img src="../images/영화1.jpg" alt="영화1.jpg"></a>
+		</div>
+	
+		<div>	
+		<a href="https://www.youtube.com/embed/xM1CIQd_X4c?si=LB80GHEJh9PkGxgr" target="mvifr">
+		<img src="../images/영화2.jpg" alt="영화2.jpg"></a>
+		</div>
+		
+	</div>
+</div>
 </body>
 </html>

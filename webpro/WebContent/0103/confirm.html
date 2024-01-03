@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+proc1 = () =>{
+		str = " ";
+	while(true){
+		//입력
+		su = parseInt(prompt("구구단 수 를 입력"));
+		str += `****${su}단****<br>`;
+		//구구단 작성-반복문 -출력내용작성
+		for(i=1; i<10; i++){
+			/* str += su + "*" + i + "=" +(su*i) + "<br>"; */
+			str += `${su} * ${i} = ${su*i} <br>`;
+		}
+		//출력
+		document.getElementById('result1').innerHTML = str;
+		//confirm() 함수호출
+		ss = confirm("계속하시겠습니까?");
+		if(!ss) break;
+		
+	}
+	//출력2
+	//document.getElementById('result1').innerHTML = str;
+}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+<h4>prompt()함수를 이용해서 수를 입력<br>
+수에 해당하는 구구단을 출력<br>
+계속 여부를 confirm()함수를 이용한다</h4>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id="result1"></div>
+</div>
+</body>
+</html>

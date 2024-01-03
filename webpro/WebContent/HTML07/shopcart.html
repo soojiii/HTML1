@@ -3,8 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#fDiv {
+	width: 600px;
+	margin: 70px auto;
+}
+h1{
+	margin-left: 160px;
+	margin-bottom : 50px;
+}
+table{
+  border : 1px solid;
+  border-collapse : collapse;
+}
+td{
+  border : 1px solid;
+  text-align: center;
+  width: 110px;
+  height: 40px;
+}
+#th{
+  border : 1px solid;
+  text-align: center;
+  width: 170px;
+  height: 40px;
+}
+#sub{
+  width: 92%;
+  height: 80%;
+}
+#input{
+  margin-left: 180px; 
+  margin-top: 40px;
+}
+#input input{
+  width: 65px;
+  height: 30px;
+}
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size : 1.3rem;
+  font-weight : bold;
+  color : #1e2c50;
+  background: #efe819;
+}
+</style>
 </head>
 <body>
+<div id="fDiv">
+	<form>
+	<h1>장바구니 페이지</h1>
+	<table>
+ 	<tr>
+		<th id="th">품목</th>
+		<th id="th">가격</th>
+		<th>수량</th>
+		<th id="th">합계</th>
+	 </tr>
+	 <tr>
+		<td>컴퓨터 세트</td>
+		<td>2,000,000원</td>
+		<td><input id="sub" type="text" name="aty"></td>
+		<td><input id="sub" type="text" name="sum"></td>
+	 </tr>
+	 <tr>
+		<td>티셔츠</td>
+		<td>50,000원</td>
+		<td><input id="sub" type="text" name="aty"></td>
+		<td><input id="sub" type="text" name="sum"></td>
+	 </tr>
+	 <tr>
+		<td>음악파일</td>
+		<td>1,000원</td>
+		<td><input id="sub" type="text" name="aty"></td>
+		<td><input id="sub" type="text" name="sum"></td>
+	 </tr>
+	 <tr>
+		<td>영화파일</td>
+		<td>5,000원</td>
+		<td><input id="sub" type="text" name="aty"></td>
+		<td><input id="sub" type="text" name="sum"></td>
+	 </tr>
+	 </table>
+	 <div id="input">
+	 <input type="submit" value="계산"> 
+	 <input type="submit" value="구매"> 
+	 <input type="reset" value="초기화">
+	 </div>
+	 </form>
+</div>
+<div id="fDiv">
+	<a href="main.html">&nbsp;HOME&nbsp;</a>
+</div>
 
 </body>
 </html>

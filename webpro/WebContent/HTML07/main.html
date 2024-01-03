@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-body *{
-  border : 1px solid red;
-}
+/* body *{
+border : 1px solid red;
+} */
 #firstDiv{
   display: flex;
   flex-direction: column;
@@ -19,34 +19,45 @@ body *{
 }
 #left{
   flex : 20%;
-  background: skyblue;
-  margin : 10px;
+  background: #efe819;
+  margin-left : 10px;
+  padding-right: 5px;
 }
 #left h3{
   margin : 20px 20px;
   padding : 10px 0px;
+  
 }
 #left ul{
   list-style-type: none;
   margin : 20px 20px;
   padding : 0px;
-  background: blue;
+  background: #ffffff;
 }
 #left li{
   padding : 10px;
+  border : 1.5px solid #e7e5ff;
+}
+#left a{
+  text-decoration: none;
+  color : black;
+  font-weight : bold;
 }
 section{
   flex : 60%;
+  background: #ebf5f4;
 }
-iframe{
+#article1 iframe{
   width : 624px;
   height : 500px;
-  padding : 15px;
+  padding-left : 20px;
+  border: none;
 }
 #right{
   flex : 20%;
-  background: lightpink;
-  margin : 10px;
+  background: #efe819;
+  margin-right : 10px;
+  padding-left: 5px;
 }
 #right h3{
   padding : 10px 0px;
@@ -56,6 +67,7 @@ iframe{
   margin : 0;
   padding : 0px;
   font-size : 0.8rem;
+  font-weight : bold;
 }
 #shoppingDiv{
   margin : 20px 20px;
@@ -67,23 +79,28 @@ iframe{
 }
 .rLabel{
   font-size : 0.8rem;
+  font-weight : bold;
 }
 .rInput{
   width  : 222px;
   height : 20px;
   font-size : 0.8rem;
+  font-weight : bold;
 }
 .sub{
   width  : 50px;
   font-size : 0.8rem;
   text-align: center;
+  font-weight : bold;
 } 
 header{
-  background: green;
-  margin : 10px;
+  background: #1e67eb;
+  margin : 10px 10px 0px;
+  padding : 5px 0px 3px;
 }
 header a{
   text-decoration: none;
+  color : black;
 }
 header h1{
   margin : 10px 20px;
@@ -94,11 +111,11 @@ header h1{
   vertical-align: bottom;
 }
 nav{
-  background: gray;
+  border-bottom : 4px solid;
   display: flex;
   align-items :center;
-  margin : 10px;
-
+  margin : 0px 10px 0px;
+  padding :10px 10px 2px; 
 }
 nav ul{
   list-style-type: none;
@@ -107,21 +124,24 @@ nav ul{
 }
 nav li{
   float : left;
-  margin : 0px 30px;
+  margin : 0px 40px;
 }
 nav a{
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-size : 1.3rem;
+  font-weight : bold;
+  color : #1e2c50;
 }
 footer{
-  background: yellow;
-  margin : 10px;
+  border-top : 4px solid;
+  margin : 0px 10px 10px;
 }
 footer p{
   text-align: center;
   font-size : 1rem;
+  font-weight : bold;
 }
 </style>
 </head>
@@ -160,7 +180,7 @@ footer p{
 		
 		<section>
 			<article id="article1">
-				<iframe src="computer.html" name="ifr">
+				<iframe src="영화.html" name="ifr">
 				</iframe>
 			</article>
 		</section>
@@ -169,7 +189,7 @@ footer p{
 			<div id="shoppingDiv">
 				<h3>Shopping Cart</h3>
 				<p>현재 쇼핑카트에 물품이 없습니다.</p>
-				<a href="#">쇼핑카트 보기</a>
+				<a href="shopcart.html">쇼핑카트 보기</a>
 			</div>
 				<div id="loginDiv">
 				<form>
@@ -184,7 +204,7 @@ footer p{
 				<input class="sub" type="reset" value="초기화">
 				</form>		
 				<br><br>
-				<a href="#">회원가입</a>
+				<a href="회원가입register.html">회원가입</a>
 				<a href="#">비밀번호 분실</a>
 				</div>
 		</aside>
@@ -193,13 +213,7 @@ footer p{
 	<footer>
 		<p>2024.01.03&nbsp;&nbsp;&nbsp;대덕인재개발원</p>
 	</footer>	
-		
-	
-	
 </div>
-
-
-
 
 </body>
 </html>

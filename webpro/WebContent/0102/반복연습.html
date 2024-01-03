@@ -84,6 +84,44 @@ proc4 = () => {
 	document.getElementById('result4').innerHTML = str;
 }
 
+proc5 = () => {
+	//출력내용 변수
+	str = "";
+		
+	for(i=1; i<=100; i++){
+		if((i % 2 != 0) || (i % 3 != 0)) continue;
+		str += i + " ";
+		}
+	
+	//출력
+	document.getElementById('result5').innerHTML = str;
+}
+
+proc6 = () => {
+	//출력내용 변수
+	str = "";
+	sum = 0;
+	
+	while(true){
+		vinput1 = parseInt(prompt("수를 입력하세요"));
+		vinput2 = parseInt(prompt("수를 입력하세요"));
+		sum = vinput1+vinput2;
+		
+		if(sum>=100){
+		str = sum;
+		break;
+		}
+		else if((vinput1==0)&&(vinput2==0)){
+		break;
+		}
+		else if(sum<100) {
+		continue;
+		}
+	}
+	
+	//출력
+	document.getElementById('result6').innerHTML = str;
+}
 
 </script>
 </head>
@@ -117,6 +155,23 @@ proc4 = () => {
 <input type="button" value="확인" onclick="proc4()">
 <br><br>
 <div id="result4"></div>
+</div>
+
+<div class="box">
+<h4>1~100 까지 중 2의 배수이면서 3의 배수인 것만 출력</h4>
+
+<input type="button" value="확인" onclick="proc5()">
+<br><br>
+<div id="result5"></div>
+</div>
+
+<div class="box">
+<h4>두 수를 입력(prompt) 두수의 합이 100이상일이때만 출력 </h4>
+<h4>(continue를 이용 , 두수 모두 0 이 입력되면 종료) </h4>
+
+<input type="button" value="확인" onclick="proc6()">
+<br><br>
+<div id="result6"></div>
 </div>
 
 </body>
