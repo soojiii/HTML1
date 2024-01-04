@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+  /* arr=[];
+  arr=new Array();
+  arr[0] = "ㅅㄱ";
+  arr[1] = "ㅂㅅㅇ"; */
+  
+  proc3 = () =>{
+     
+     idx=0;
+     sidx = "";
+     // while 문을 돌았는지(요소가있으면 true 없으면 false)
+     check = false;
+     // 입력
+     item = prompt("입력");
+     
+     str = `찾는 과일 : ${item} <br>`;
+     // 반복문 - 찾기 - 비교
+     while(true){
+        idx = arr.indexOf(item,idx);
+        if(idx <0){
+           break;
+        }
+        sidx += idx + "번째 ";
+        idx++;
+        check = true;
+     }
+     if(check)
+        str += sidx + " 있습니다.";
+     else
+        str += item + " 은 요소에 없습니다.";
+     
+     document.getElementById("result3").innerHTML = str;
+  }
+  
+  
+  arr = ["ㅅㄱ","ㅂㅅㅇ","ㅍㅇㅇㅍ","ㅂㄴㄴ","ㅅㄱ","ㅊㅇ","ㅈㄷ","ㅅㄱ"];
+  
+  proc1 = () => {
+     item = prompt("입력");
+     
+     str = "찾는 과일 : " + item + "<br>";
+     
+     //위치찾기 - 비교
+     idx = arr.indexOf(item);
+     if(idx >= 0){   // 인덱스가 0보다 크면 존재
+      str += idx +" 번째 있습니다.";  
+     }else{
+      str += " 요소에 없습니다.";
+     }
+     document.getElementById("result1").innerHTML = str;
+  }
+  proc2 = () => {
+     item = prompt("입력");
+     
+     str = "찾는 과일 : " + item + "<br>";
+     
+     idx = arr.lastIndexOf(item);
+     if(idx >= 0){
+      str += idx +" 번째 있습니다.";  
+     }else{
+      str += " 요소에 없습니다.";
+     }
+     document.getElementById("result2").innerHTML = str;
+  }
+  
+  proc4 = () =>{
+     str = "원래 배열 " + arr + "<br>";
+     
+     //arr.push("ㅁㄱ","ㄸㄱ","ㅍㅇㅇㅍ");
+     
+     /* item = prompt("입력");
+     arr.push(item); */
+     
+     while(true){  
+       item = prompt("입력");
+       // 비교 취소버튼 누르면 null 값 반환됨
+       if(item == null)break;
+       arr.push(item);
+       
+       
+     }
+     
+     str += "추가된 배열" + arr + "<br>";
+     
+     document.getElementById("result4").innerHTML = str;
+     
+  }
+  
+  proc5 = () => {
+     str = `원래배열 : ${arr} <br>`;
+     
+     arr.pop();
+  }
+
+proc5 = () => {
+	str = `원래배열 : ${arr} <br>`;
+	
+	item = arr.pop();
+	
+	str += `삭제 후 배열 : ${arr} <br>`;
+	str += `삭제요소 ${item} <br>`;
+	
+	document.getElementById('result5').innerHTML = str;
+}
+ 
+proc6 = () => {
+		
+	sarr = arr.slice(1, 4);
+	
+	str = `원래배열 : ${arr} <br>`;
+	str += `arr.slice(1, 4) : ${sarr} <br>`;
+	
+	document.getElementById('result6').innerHTML = str;
+	
+}
+
+proc7 = () => {
+	str = `원래배열 : ${arr} <br>`;
+	
+	//arr.splice(2, 0, 100, 200, 300);
+	//str += `arr.splice(2, 0, 100, 200, 300) : ${arr} <br>`;
+	
+	//arr.splice(3, 2, 100, 200, 300);
+	//str += `arr.splice(2, 0, 100, 200, 300) ${arr} <br>`;
+	
+	arr.splice(1, 2);
+	str += `arr.splice(1, 2) ${arr} <br>`;
+	
+	
+	document.getElementById('result7').innerHTML = str;
+	
+}
+
+proc8 = () => {
+	str = `arr의 길이 : ${arr.length} <br>`;
+	
+	for(i=0; i<arr.length; i++){
+		str += `${i} : ${arr[i]} <br>`
+	}
+	
+	document.getElementById('result8').innerHTML = str;
+	
+	vstr = arr.join();
+	
+	str = `vstr의 길이 : ${vstr.length} <br>`;
+	
+	for(i=0; i<vstr.length; i++){
+		str += `&{i} : ${vstr[i]} <br>`;
+	}
+	
+	document.getElementById('result8').innerHTML = str;
+}
+
+proc9 = () => {
+	
+	aa = [100,200,300,400];
+	
+	newarr = arr.concat(aa);
+	
+	document.getElementById('result9').innerHTML = newarr;
+	
+}
+
+
+
+
+  
+</script>
+</head>
+<body>
+
+<div class="box">
+    <h4></h4>
+    <input type="button" value="indexOf" onclick="proc1()" />
+    <input type="button" value="lastIndexOf" onclick="proc2()" />
+    <input type="button" value="All" onclick="proc3()" /> <br /><br />
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+  </div>
+
+  <div class="box">
+    <h4></h4>
+    <input type="button" value="push" onclick="proc4()" />
+    <input type="button" value="pop" onclick="proc5()" />
+    <br /><br />
+    <div id="result4"></div>
+    <div id="result5"></div>
+  </div>
+  
+  <div class="box">
+    <h4></h4>
+    <input type="button" value="slice" onclick="proc6()" />
+    <input type="button" value="splice" onclick="proc7()" />
+    <br /><br />
+    <div id="result6"></div>
+    <div id="result7"></div>
+  </div>
+  
+  <div class="box">
+    <h4></h4>
+    <input type="button" value="join" onclick="proc8()" />
+    <input type="button" value="concat" onclick="proc9()" />
+    <br /><br />
+    <div id="result8"></div>
+    <div id="result9"></div>
+  </div>
+</body>
+</html>
