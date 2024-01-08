@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+proc1 = () =>{
+	
+	//입력
+	userName = prompt("이름을 입력");
+	
+	parout = opener.document.getElementById('result1');
+	parout.innerHTML = userName;
+	parout.style.fontSize = "1.5rem";
+	parout.style.background = "#afd4a7";
+	
+	window.close();
+	
+}
+</script>
+</head>
+<body>
+
+<div class="box">
+<h4></h4>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id="result1"></div>
+</div>
+</body>
+</html>

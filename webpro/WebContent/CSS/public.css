@@ -17,7 +17,7 @@ pre{
 	padding : 10px;
 	margin : 10px;
 }
-.box input[type=button]{
+.box input[type=button], .box input[type=submit]{
 	background: blue;
 	color : white;
 	border-radius: 10px;

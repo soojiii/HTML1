@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+rand = Math.floor(Math.random() * 51);
+//rand = parseInt(Math.random() * 51);
+
+//20~85; Math.random()* 66+20
+
+//변수 선언
+ins = "";
+count = 0;
+
+proc1 = () =>{
+	
+	//입력한 값 가져오기, 혹시 모를 공백제거;
+	input = document.getElementById('txt').value.trim();
+	ins += input + " ";
+	count ++;
+	
+	//비교
+	if(rand == input){
+		hint = "정답"
+		str = `입력 수 들 : ${ins} <br>`;
+		str += `입력횟수 : ${count} <br>`;
+		str += hint;
+	}else if(rand > input){
+		str = "더 큰수로 입력"
+	}else{
+		str = "더 작은수"
+	}
+	
+	//result1에  - hint출력
+	document.getElementById('result1').innerHTML = str;
+	
+}
+
+proc2 = () =>{
+	str = ["가위", "바위", "보"]; str[0], str[2], str[1]
+	
+	rand = Math.floor(Math.random() * str.length);
+	
+	com = str[rand];
+	
+	user = prompt("입력", "가위바위보");
+	
+	if(com == user){
+		res = "비겼습니다."
+	}else if((com=="가위" && user=="바위") ||
+			 (com=="바위" && user=="보") ||
+			 (com=="보" && user=="가위")){
+		res = "user가 이겼습니다."
+	}else{
+		res = "com이 이겼습니다."
+	}
+	
+	str1 = `com : ${com} <br>`;
+	str1 += `user : ${user} <br>`;
+	str1 += `결과 : ${res} <br>`;
+	
+	//result2에 출력
+	document.getElementById('result2').innerHTML = str1
+	
+}
+
+proc3 = () =>{
+	
+	arr = [];
+	
+	while(true){
+		rand = Math.floor(Math.random() * 45+1);
+		
+		//중복비교
+		idx = arr.indexOf(rand);
+		if(idx == -1) arr.push(rand);
+		
+		if(arr.length >= 6) break;
+		
+	}
+	
+	document.getElementById('result3').innerText = arr;
+}
+
+
+</script>
+</head>
+<body>
+
+<div class="box">
+<h4>랜덤 수 맞추기</h4>
+수입력 <input type="text" id="txt">
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id="result1"></div>
+</div>
+
+<div class="box">
+<h4>가위 바위 보 게임을 할 수 있는 프로그램<br>
+(컴퓨터는 랜덤, 사용자는 prompt로 입력 받아서 처리)</h4>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+<div id="result2"></div>
+</div>
+
+<div class="box">
+<h4>로또 번호를 생성하는 프로그램<br>
+(1번 ~ 45번 중 6개의 번호를 추첨)</h4>
+<input type="button" value="확인" onclick="proc3()">
+<br><br>
+<div id="result3"></div>
+</div>
+</body>
+</html>
