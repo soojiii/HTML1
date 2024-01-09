@@ -46,6 +46,34 @@ proc3 = pimg =>{
 	pimg.appendChild(vimg);
 }
 
+window.onload = function(){
+	//접근 검색
+	list = document.querySelectorAll('#u4 li');
+	
+	//이벤트 등록
+	for(i=0; i<list.length; i++){
+		//list[i].addEventListener('click', function(){기능구현})
+			
+		list[i].addEventListener('click', newImg);
+		
+	}
+}
+	
+
+newImg =  function(){
+	//this : 클릭한 : li객체 -list[i]:
+		//li객체의 text값 가져오기;
+	livalue = this.firstChild.data;
+	
+	vimg = document.createElement('img');
+	
+	vimg.src = "../images/"+livalue;
+	vimg.alt = livalue;
+	
+	this.appendChild(vimg);
+}
+
+
 </script>
 
 <style>
@@ -86,7 +114,8 @@ img{
 </div>
 
 <div class="box">
-<h4></h4>
+<h4>&lt;li onclick="proc3(this)">&lt;/li><br>
+각 li요소에 onclick=""</h4>
 <ul id="u3">
 	<li onclick="proc3(this)">무지게1.png</li>
 	<li onclick="proc3(this)">무지게2.png</li>
@@ -97,6 +126,22 @@ img{
 <input type="button" value="확인" onclick="proc3()">
 <br><br>
 <div id="result3"></div>
+</div>
+
+<div class="box">
+<h4>js에서 일괄적으로 이벤트 핸들러를 구현<br>
+li객체[인덱스].addEventListener('click', newImg)<br>
+newImg : 함수이름, 참조값만 전달, 호출방식이 아니다</h4>
+<ul id="u4">
+	<li>무지게1.png</li>
+	<li>무지게2.png</li>
+	<li>무지게3.png</li>
+	<li>무지게4.png</li>
+	<li>무지게5.png</li>
+</ul>
+
+<br><br>
+<div id="result4"></div>
 </div>
 </body>
 </html>
