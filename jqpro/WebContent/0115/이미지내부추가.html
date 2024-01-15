@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+$(()=>{
+	$('#app').on('click', ()=>{
+		//이미지 만들기
+		vimg = $("<img src = '../images/딸기스무디.jpg' alt='딸기스무디.jpg'>"); 
+		
+		//p1에 추가
+		//$('#p1').append(vimg);
+		$(vimg).appendTo($('#p1'));
+	})
+	
+	$('#prep').on('click', ()=>{
+		vimg = $("<img src = '../images/딸기스무디.jpg' alt='딸기스무디.jpg'>");
+		
+		//p2에 추가
+		$('#p2').prepend(vimg);
+		
+	})
+	
+	
+	$('#aft').on('click', ()=>{
+		vimg = $("<img src = '../images/딸기스무디.jpg' alt='딸기스무디.jpg'>");
+		//$('#p3').after(vimg);
+		
+		$(vimg).insertAfter($('#p3'));
+	})
+	
+	
+	$('#bef').on('click', ()=>{
+		vimg = $("<img src = '../images/딸기스무디.jpg' alt='딸기스무디.jpg'>");
+		//$('#p4').before(vimg);
+		
+		$(vimg).insertBefore($('#p4'));
+		
+	})
+	
+	
+})
+</script>
+<style>
+img{
+  width : 100px;
+  heigth : 100px;
+}
+p{
+  /* border : 2px solid blue; */
+}
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h4></h4>
+    <input type="button" value="append" id="app"> 
+    <input type="button" value="prepend" id="prep"> 
+    <br><br>
+    <p id="p1">딸기스무디</p>
+    <p id="p2">딸기스무디</p>
+    <div id="result1"></div>
+  </div>
+  
+  <div class="box">
+    <h4></h4>
+    <input type="button" value="before" id="bef"> 
+    <input type="button" value="after" id="aft"> 
+    <br><br>
+    <p id="p4">딸기스무디</p>
+    <p id="p3">딸기스무디</p>
+    <div id="result1"></div>
+  </div>
+</body>
+</html>

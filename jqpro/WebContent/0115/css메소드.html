@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function(){
+/* 	$('p').on('click', function(){
+		$(this).toggleClass('pcolor');
+	}) */
+	$('p').on('click', function(){
+		if($(this).hasClass('pcolor')){
+			$(this).removeClass('pcolor');
+		}else{
+			$(this).addClass('pcolor');
+		}
+	})
+	
+	
+/* 	$('p').on('hover', function(){
+		$(this).addClass('pback');
+	}) */
+	
+/* 	$('p').hover(function(){
+		$(this).toggleClass('pback');
+	}) */
+	
+/* 	$('p').on('mouseover', function(){
+		$(this).addClass('pback');
+	})
+	
+	$('p').on('mouseout', function(){
+		$(this).removeClass('pback');
+	}) */
+	
+})
+</script>
+<style>
+.pcolor{
+  color : red; 
+}
+.pback{
+  background : crimson;
+}
+/* p:hover{
+  background : crimson;
+} */
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h4></h4>
+    <div id="result1">
+    <p>무궁화 꽃이 피었습니다</p>
+    <p>무궁화 꽃이 피었습니다</p>
+    <p>무궁화 꽃이 피었습니다</p>
+    <p>무궁화 꽃이 피었습니다</p>
+    <p>무궁화 꽃이 피었습니다</p>
+    <p>무궁화 꽃이 피었습니다</p>
+    </div>
+  </div>
+</body>
+</html>

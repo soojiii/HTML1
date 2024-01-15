@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//btn1검색
+	$('#btn1').on('click', function(){
+		//hlist = document.getElementsByTagName('h1');
+		//hlist- dom변수
+		hlist = document.querySelectorAll('#result1 h1');
+		
+		for(i=0; i<hlist.length; i++){
+			hlist[i].style.color = 'blue';
+		}
+		
+		hlist[0].style.color = 'red';
+		hlist[1].style.color = 'green';
+		
+		//dom변수에 $()감싸면 jquery변수로 변환
+		$(hlist[2]).css('background', 'yellow');
+		$(hlist).eq(3).css('background', 'pink');
+		
+	})
+	
+	//btn2검색
+	$('#btn2').on('click', function(){
+		hlist = $('#result2 h1');
+		hlist.css('color', 'red');
+		
+		hlist.eq(1).css('color', 'green');
+		
+		//jquery변수에 [인덱스]를 붙히면 dom으로 변환
+		hlist[0].style.color = 'blue';
+		
+		//hlist[0] : dom이다.   $(dom변수)-> jquery변수
+		$(hlist[0]).css('color', 'blue');
+		
+	})
+
+	
+})
+</script>
+</head>
+<body>
+
+<div class="box">
+<h4></h4>
+<input type="button" value="확인" id="btn1">
+<br><br>
+<div id="result1">
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+</div>
+</div>
+
+<div class="box">
+<h4></h4>
+<input type="button" value="확인" id="btn2">
+<br><br>
+<div id="result2">
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+	<h1>무궁화 꽃이 피었습니다.</h1>
+</div>
+</div>
+</body>
+</html>
