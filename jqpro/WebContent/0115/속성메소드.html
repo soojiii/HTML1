@@ -14,8 +14,16 @@ $(document).ready(()=>{
 	
 	$('#btn2').on('click', function(){
 		$('#result2 p').attr('title', function(){
+ 			vp = $(this).text();
+			//vtitle = vp.substring(0,3); 
+			//vtitle=vp.slice(0,3)
+			//return vtitle;
+		
+			//vp문자열을 공백기준으로 분리 - 배열을 리턴
+			tetarr = vp.split(" ");
 			
-			return 결과값;
+			
+			return tetarr[0];
 		})
 	})
 })
@@ -49,7 +57,7 @@ $(document).ready(()=>{
     <p>능수화 꽃이 피었습니다</p>
     <p>진달래 꽃이 피었습니다</p>
     <p>라일락 꽃이 피었습니다</p>
-    <p>수선화 꽃이 피었습니다</p>
+    <p>코스모스 꽃이 피었습니다</p>
     <p>봉숭아 꽃이 피었습니다</p>
     </div>
   </div>
