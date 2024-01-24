@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script>
+obarrproc = () =>{
+	fetch("../0117/obarr.jsp")
+	.then(resp =>{
+		return resp.json();
+	})
+	.then(data =>{
+		
+		code = "<ul>"
+		
+			data.forEach((str, index) =>{
+				code += index +"번째 정보"+"<br>";
+				code += "이름 : "+ str.name+"<br>";
+				code += "주소 : "+ str.addr+"<br>";
+				code += "전화번호 : "+str.tel+"<br><br>";
+			})
+			
+		code += "</ul>";
+			
+		$('#result4').html(code);
+	})
+}
+
+
+objproc = () =>{
+	fetch("../0117/obj.jsp")
+	.then(resp =>{
+		return resp.json();
+	})
+	.then(data =>{
+		//출력내용 완성
+		code = "이름 : " +data.name + "<br>";
+		code += "주소 : " +data.addr + "<br>";
+		code += "전화번호 : " +data.tel + "<br>";
+		
+		//출력
+		$('#result3').html(code);
+	})
+}
+
+
+arrproc = () =>{
+	fetch("../0117/arr.jsp")
+	.then(response =>{
+		return response.json();
+	})
+	.then(data =>{
+		//data : ["홍길동", "강감찬", "이순신", "임꺽정", "김유신"]
+	
+		//출력
+		code = "<ul>"
+		data.forEach((str, index)=>{
+			code += "<li>"+str+"</li>";
+		})
+		code += "</ul>";
+			
+		$('#result2').html(code);
+		
+	})
+}
+
+textproc = () =>{
+	//let promi = fetch('http://localhost/jqpro/0117/text.jsp')
+	//let promi = fetch('../0117/text.jsp')
+	fetch('http://192.168.142.26/jqpro/0117/text.jsp',{mode : 'cors'})
+	.then(resp =>{
+		console.log("resp", resp);
+		
+		return resp.text();
+	})
+	.then(function(data){
+		//data : 홍길동/개나리/진달래/무궁화/수선화/라일락
+		
+		str = data.split("/");
+		
+		//str배열을 이용해서 출력
+/* 		str.forEach((vs, index) =>{
+		}) */
+		code = "<ul>"
+		$.each(str, (i, val)=>{
+			code += "<li>" + str[i] + "</li>"
+		})		
+		code += "</ul>";
+		
+		$('#result1').html(code);
+		
+	})
+	//console.log("promi", promi);
+}
+
+</script>
+
+<style>
+</style>
+
+</head>
+<body>
+
+<div class="box">
+   <h4></h4>
+   <input type="button" value="text" onclick="textproc()"> 
+   <input type="button" value="arr" onclick="arrproc()"> 
+   <input type="button" value="jsonobj" onclick="objproc()"> 
+   <input type="button" value="jobarr" onclick="obarrproc()"> 
+   <br><br>
+   <div id="content">
+   <div id="result1" class="res"></div>
+   <div id="result2" class="res"></div>
+   <div id="result3" class="res"></div>
+   <div id="result4" class="res"></div>
+   </div>
+</div>
+</body>
+</html>

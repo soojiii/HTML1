@@ -8,6 +8,7 @@
 
 //결과값으로 응답 데이타 만들기 - text
 
+response.setHeader("Access-Control-Allow-Origin", "http://localhost");
 
 %>
 
