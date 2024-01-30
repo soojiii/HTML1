@@ -45,6 +45,10 @@ public class BoardDaoImpl implements IBoardDao{
 			session = MybatisUtil.getSqlSession();
 			ivo = session.insert("board.insertBoard", vo);
 			
+			if(ivo>0) {
+				session.commit();
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

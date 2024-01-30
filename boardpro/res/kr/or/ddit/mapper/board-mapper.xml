@@ -38,7 +38,7 @@ select A.* from
 <!-- 글쓰기 -->
 <insert id="insertBoard" parameterType="BoardVO">
 	insert into boardtab 
-	valuse(boardtab_num_seq.nextval,
+	values(boardtab_num_seq.nextval,
 	#{subject}, #{writer}, #{mail}, #{password}, 
 	#{content}, 0, #{wip}, sysdate
 	)
