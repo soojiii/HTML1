@@ -44,6 +44,7 @@
 		 -->
 		 <mapper resource="kr/or/ddit/mapper/board-mapper.xml"/>
 		 <mapper resource="kr/or/ddit/mapper/member-mapper.xml"/>
+		 <mapper resource="kr/or/ddit/mapper/reply.xml"/>
 	</mappers>                  
 	
 </configuration>

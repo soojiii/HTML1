@@ -52,6 +52,7 @@ public class BoardDaoImpl implements IBoardDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			if(session!=null) session.close();
 		}
 		return ivo;
@@ -69,6 +70,7 @@ public class BoardDaoImpl implements IBoardDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			if(session!=null) session.close();
 		}
 		return uvo;
@@ -86,6 +88,7 @@ public class BoardDaoImpl implements IBoardDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			if(session!=null) session.close();
 		}
 		return dvo;
@@ -120,24 +123,77 @@ public class BoardDaoImpl implements IBoardDao{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			session.commit();
 			if(session!=null) session.close();
 		}
 		return uvo;
 	}
 	@Override
 	public int insertReply(ReplyVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int uvo =0;
+		SqlSession session = null;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			uvo = session.insert("reply.insertReply", vo);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			if(session!=null) session.close();
+		}
+		return uvo;
 	}
 	@Override
 	public int updateReply(ReplyVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		int uvo =0;
+		SqlSession session = null;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			uvo = session.update("reply.updateReply", vo);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			if(session!=null) session.close();
+		}
+		return uvo;
 	}
 	@Override
-	public int deleteReply(int num) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteReply(int renum) {
+		int uvo =0;
+		SqlSession session = null;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			uvo = session.delete("reply.deleteReply", renum);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			if(session!=null) session.close();
+		}
+		return uvo;
+	}
+	@Override
+	public List<ReplyVO> replyList(int bonum) {
+		List<ReplyVO> list = new ArrayList<ReplyVO>();
+		SqlSession session = null;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			list = session.selectList("reply.replyList", bonum);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.commit();
+			if(session!=null) session.close();
+		}
+		return list;
 	}
 	
 //	@Override

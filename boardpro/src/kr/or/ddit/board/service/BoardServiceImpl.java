@@ -91,20 +91,22 @@ public class BoardServiceImpl implements IBoardService{
 
 	@Override
 	public int insertReply(ReplyVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.insertReply(vo);
 	}
 
 	@Override
 	public int updateReply(ReplyVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.updateReply(vo);
 	}
 
 	@Override
-	public int deleteReply(int num) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteReply(int renum) {
+		return dao.deleteReply(renum);
+	}
+
+	@Override
+	public List<ReplyVO> replyList(int bonum) {
+		return dao.replyList(bonum);
 	}
 	
 }

@@ -36,7 +36,9 @@ public interface IBoardDao {
 	public int updateReply(ReplyVO vo);
 		
 	//댓글 삭제
-	public int deleteReply(int num);
+	public int deleteReply(int renum);
 	
+	//댓글 리스트
+	public List<ReplyVO> replyList(int bonum);
 	
 }
